@@ -1,0 +1,48 @@
+name: museokauppa-daily
+
+on:
+  schedule:
+    # Runs at 04:00 UTC = 07:00 Helsinki in EEST (summer)
+    # and 06:00 Helsinki in EET (winter). Good enough for a morning dashboard;
+    # tweak to "0 5 * * *" if you prefer 07:00 Helsinki year-round in EET.
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}   # allow manual runs from the Actions tab
+
+permissions:
+  contents: write         # needed to commit docs/ back to the repo
+  pages: write            # for later if you switch to Pages artifact flow
+  id-token: write
+
+concurrency:
+  group: museokauppa-daily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build dashboard
+        env:
+          BOKUN_ACCESS_KEY: ${{ secrets.BOKUN_ACCESS_KEY }}
+          BOKUN_SECRET_KEY: ${{ secrets.BOKUN_SECRET_KEY }}
+        run: python scripts/build_dashboard.py
+
+      - name: Commit updated docs/
+        run: |
+          git config user.name  "museokauppa-bot"
+          git config user.email "museokauppa-bot@users.noreply.github.com"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No dashboard changes to commit."
+          else
+            git commit -m "dash: $(date -u +%F) run"
+            git push
+          fi
