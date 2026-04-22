@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="referrer" content="no-referrer">
-<title>Museokauppa Dashboards</title>
+<title>Museokauppa Dashboard — Tue 2026-04-21</title>
 <style>
 :root {
   --bg: #0f172a; --panel: #1e293b; --ink: #f1f5f9; --muted: #94a3b8;
@@ -52,12 +54,81 @@ footer { margin-top:24px; font-size:11px; color:var(--muted); text-align:center;
 .legend { font-size:12px; color:var(--muted); margin-top:6px; }
 @media (max-width:780px) { .grid-kpi { grid-template-columns:repeat(2,1fr); }
   .status-row { grid-template-columns:90px 1fr; } }
-</style></head>
-<body><div class="wrap">
-  <header><div><h1>Museokauppa Dashboards</h1>
-  <div class="subtitle">Recent daily runs · <a href="latest.html" style="color:var(--accent);">open latest →</a></div>
-  </div></header>
-  <section class="card"><h2>Recent days</h2>
-  <ul style="line-height:1.8;font-size:14px;"><li><a href='2026-04-21.html'>2026-04-21</a></li></ul>
-  </section>
-</div></body></html>
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Museokauppa Dashboard</h1>
+        <div class="subtitle">Museokortti channel · sales day <strong>Tue 2026-04-21</strong></div>
+      </div>
+      <div class="meta">
+        Generated <strong>2026-04-22 07:58 UTC</strong><br>
+        Schedule: daily 07:00 Europe/Helsinki<br>
+        Owner: Lassi Nummi (CEO, B&amp;E)
+      </div>
+    </header>
+
+    <div class="grid-kpi">
+      <div class="kpi"><div class="label">Orders</div>
+        <div class="value">3</div>
+        <div class="delta">unique parent bookings</div></div>
+      <div class="kpi"><div class="label">Gross sales (BM), EUR</div>
+        <div class="value">400 €</div>
+        <div class="delta">bruttomyynti, not FAS LV</div></div>
+      <div class="kpi"><div class="label">AOV, EUR</div>
+        <div class="value">133 €</div>
+        <div class="delta">gross ÷ orders</div></div>
+      <div class="kpi"><div class="label">WoW Δ</div>
+        <div class="value">-400 €</div>
+        <div class="delta down">▼ -50.0% vs same day last week (800 €)</div></div>
+    </div>
+
+    <section class="card">
+      <h2>Top 10 products</h2>
+      <table>
+        <thead><tr><th>#</th><th>Product</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
+        <tbody><tr><td>1</td><td>Unknown product</td><td class='num'>3</td><td class='num'>400 €</td></tr></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Geography split</h2>
+      <div style='color:var(--muted);font-size:13px;'>Traveler-country breakdown unavailable for this day.</div>
+    </section>
+
+    <section class="card">
+      <h2>Data sources</h2>
+      
+      <div class="status-row">
+        <div><span class="pill ok">OK</span></div>
+        <div>
+          <div style="font-weight:600;">Bokún REST API</div>
+          <div class="src-detail">
+            Endpoint: <code>POST /booking.json/product-booking-search</code><br>
+            Scope: Museokortti booking channel (server-side key)<br>
+            Window: creationDateRange = Tue 2026-04-21
+          </div>
+        </div>
+        <div class="num"><code>3 lines</code></div>
+      </div>
+      <div class="status-row">
+        <div><span class="pill warn">Skipped</span></div>
+        <div>
+          <div style="font-weight:600;">Trip (elamys-trip2) export</div>
+          <div class="src-detail">Disabled in v1 — Bokún-only per current setup.</div>
+        </div>
+        <div class="num"><code>—</code></div>
+      </div>
+    
+    </section>
+
+    <footer>
+      Museokauppa Dashboard · Elämys Group B&amp;E · automated run ·
+      "Gross sales (BM)" = bruttomyynti (not FAS liikevaihto) ·
+      cancellations excluded from totals (0 cancelled lines observed).
+    </footer>
+  </div>
+</body>
+</html>
