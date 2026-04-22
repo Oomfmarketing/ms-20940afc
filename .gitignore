@@ -4,3 +4,10 @@ __pycache__/
 .DS_Store
 .env
 .bokun-credentials
+
+# Raw Trip CSV exports contain PII (customer names, emails, phones, addresses).
+# NEVER commit the raw export. Run scripts/trip_aggregate.py locally to produce
+# data/trip-aggregates.json (PII-free) and commit only that aggregate file.
+Dashboard-packages*.csv
+*trip-raw*.csv
+*trip-orders*.csv

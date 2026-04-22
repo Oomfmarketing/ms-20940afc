@@ -51,6 +51,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DOCS = REPO_ROOT / "docs"
 DOCS.mkdir(parents=True, exist_ok=True)
 HISTORY_FILE = DOCS / "history.json"
+# PII-free per-day aggregates produced locally by scripts/trip_aggregate.py
+# from the Trip admin-UI "Dashboard-packages" CSV export.
+TRIP_FILE = REPO_ROOT / "data" / "trip-aggregates.json"
 
 
 def helsinki_offset(on: date) -> timedelta:
@@ -372,6 +375,55 @@ def save_history(hist: dict[str, Any]) -> None:
     )
 
 
+def load_trip_aggregates() -> dict[str, Any]:
+    """Load the PII-free Trip aggregates JSON if present; empty dict if not."""
+    if TRIP_FILE.exists():
+        try:
+            with TRIP_FILE.open(encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict) and "days" in data:
+                return data
+        except Exception as e:
+            print(f"[museokauppa] WARN: trip-aggregates.json unreadable: {e}",
+                  file=sys.stderr)
+    return {"updated": None, "days": {}}
+
+
+def trip_range_totals(trip: dict[str, Any],
+                      d_from: date, d_to: date) -> dict[str, Any]:
+    """Sum per-day Trip aggregates across the inclusive date range."""
+    days = trip.get("days") or {}
+    out = {
+        "orders_confirmed": 0,
+        "orders_pending": 0,
+        "orders_cancelled": 0,
+        "gross_eur_confirmed": 0.0,
+        "gross_eur_pending": 0.0,
+        "by_package": defaultdict(lambda: {"orders": 0, "eur": 0.0}),
+        "by_country": defaultdict(int),
+        "days_with_data": 0,
+    }
+    d = d_from
+    while d <= d_to:
+        rec = days.get(d.isoformat())
+        if rec:
+            out["days_with_data"] += 1
+            out["orders_confirmed"]    += int(rec.get("orders_confirmed") or 0)
+            out["orders_pending"]      += int(rec.get("orders_pending") or 0)
+            out["orders_cancelled"]    += int(rec.get("orders_cancelled") or 0)
+            out["gross_eur_confirmed"] += float(rec.get("gross_eur_confirmed") or 0)
+            out["gross_eur_pending"]   += float(rec.get("gross_eur_pending") or 0)
+            for name, p in (rec.get("by_package") or {}).items():
+                out["by_package"][name]["orders"] += int(p.get("orders") or 0)
+                out["by_package"][name]["eur"]    += float(p.get("eur") or 0)
+            for c, n in (rec.get("by_country") or {}).items():
+                out["by_country"][c] += int(n)
+        d += timedelta(days=1)
+    out["by_package"] = dict(out["by_package"])
+    out["by_country"] = dict(out["by_country"])
+    return out
+
+
 def totals_to_day_record(t: Totals) -> dict[str, Any]:
     return {
         "orders": t.orders,
@@ -477,7 +529,10 @@ def _nav(active: str) -> str:
 
 
 def render_html(label: str, t: Totals, wow: Totals | None,
-                generated_at: str, sales_label: str) -> str:
+                generated_at: str, sales_label: str,
+                trip: dict[str, Any] | None = None,
+                trip_wow: dict[str, Any] | None = None,
+                trip_meta: dict[str, Any] | None = None) -> str:
     aov = (t.gross_eur / t.orders) if t.orders else 0.0
     wow_html = '<div class="delta">no comparison</div>'
     wow_value_html = "—"
@@ -487,6 +542,76 @@ def render_html(label: str, t: Totals, wow: Totals | None,
         arrow = "▲" if pct >= 0 else "▼"
         wow_html = f'<div class="delta {cls}">{arrow} {pct:+.1f}% vs same day last week ({euro(wow.gross_eur)})</div>'
         wow_value_html = euro(t.gross_eur - wow.gross_eur)
+
+    # --- Trip section (B&E packages) ------------------------------------
+    trip_kpis_html = ""
+    trip_top_html = ""
+    trip_pipe_html = ""
+    if trip is not None:
+        trip_conf_orders = int(trip.get("orders_confirmed") or 0)
+        trip_conf_eur = float(trip.get("gross_eur_confirmed") or 0)
+        trip_pend_orders = int(trip.get("orders_pending") or 0)
+        trip_pend_eur = float(trip.get("gross_eur_pending") or 0)
+        trip_aov = trip_conf_eur / trip_conf_orders if trip_conf_orders else 0.0
+        trip_wow_html = '<div class="delta">no comparison</div>'
+        trip_wow_value = "—"
+        if trip_wow and (trip_wow.get("gross_eur_confirmed") or 0) > 0:
+            base = float(trip_wow["gross_eur_confirmed"])
+            pct = (trip_conf_eur - base) / base * 100
+            cls = "up" if pct >= 0 else "down"
+            arrow = "▲" if pct >= 0 else "▼"
+            trip_wow_html = f'<div class="delta {cls}">{arrow} {pct:+.1f}% vs same day last week ({euro(base)})</div>'
+            trip_wow_value = euro(trip_conf_eur - base)
+
+        trip_kpis_html = f"""
+    <section class="card">
+      <h2>Trip · B&amp;E packages · {html.escape(label)}</h2>
+      <div class="grid-kpi" style="margin-bottom:0;">
+        <div class="kpi"><div class="label">Confirmed orders</div>
+          <div class="value">{trip_conf_orders}</div>
+          <div class="delta">Status=1</div></div>
+        <div class="kpi"><div class="label">Confirmed gross (BM)</div>
+          <div class="value">{euro(trip_conf_eur)}</div>
+          <div class="delta">bruttomyynti, not FAS LV</div></div>
+        <div class="kpi"><div class="label">AOV</div>
+          <div class="value">{euro(trip_aov)}</div>
+          <div class="delta">gross ÷ confirmed</div></div>
+        <div class="kpi"><div class="label">WoW Δ</div>
+          <div class="value">{trip_wow_value}</div>
+          {trip_wow_html}</div>
+      </div>
+    </section>"""
+
+        # Top 10 packages for this window
+        tp = sorted((trip.get("by_package") or {}).items(),
+                    key=lambda kv: -kv[1]["eur"])[:10]
+        if tp:
+            tp_rows = "\n".join(
+                f"<tr><td>{i+1}</td><td>{html.escape(name)}</td>"
+                f"<td class='num'>{int(d['orders'])}</td>"
+                f"<td class='num'>{euro(d['eur'])}</td></tr>"
+                for i, (name, d) in enumerate(tp)
+            )
+        else:
+            tp_rows = "<tr><td colspan='4' style='color:var(--muted);padding:14px 10px;'>No Trip packages confirmed for this window.</td></tr>"
+        trip_top_html = f"""
+    <section class="card">
+      <h2>Trip · top packages · {html.escape(label)}</h2>
+      <table>
+        <thead><tr><th>#</th><th>Package</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
+        <tbody>{tp_rows}</tbody>
+      </table>
+    </section>"""
+
+        if trip_pend_orders > 0:
+            trip_pipe_html = f"""
+    <section class="card">
+      <h2>Trip · pending pipeline · {html.escape(label)}</h2>
+      <div style="font-size:13px;color:var(--muted);">
+        <strong style="color:var(--warn);font-size:18px;">{trip_pend_orders}</strong> pending orders totalling
+        <strong style="color:var(--ink);">{euro(trip_pend_eur)}</strong> — Status=0 (not yet confirmed).
+      </div>
+    </section>"""
 
     top = sorted(t.by_product.items(), key=lambda kv: -kv[1]["eur"])[:10]
     if top:
@@ -510,6 +635,42 @@ def render_html(label: str, t: Totals, wow: Totals | None,
     else:
         geo = "<div style='color:var(--muted);font-size:13px;'>Traveler-country breakdown unavailable for this day.</div>"
 
+    # Trip source status
+    if trip is not None:
+        meta = trip_meta or {}
+        trip_updated = meta.get("updated") or "unknown"
+        trip_src_rows = meta.get("source_row_count") or "—"
+        trip_days_data = int(trip.get("days_with_data") or 0)
+        trip_status = f"""
+      <div class="status-row">
+        <div><span class="pill ok">OK</span></div>
+        <div>
+          <div style="font-weight:600;">Trip (elamys-trip2) aggregates</div>
+          <div class="src-detail">
+            Source: PII-free aggregates at <code>data/trip-aggregates.json</code><br>
+            Produced locally by <code>scripts/trip_aggregate.py</code> from the
+            admin-UI "Dashboard-packages" CSV export<br>
+            Last refreshed: <code>{html.escape(str(trip_updated))}</code> ·
+            days in window with data: {trip_days_data}
+          </div>
+        </div>
+        <div class="num"><code>{trip_src_rows} src rows</code></div>
+      </div>"""
+    else:
+        trip_status = """
+      <div class="status-row">
+        <div><span class="pill warn">Missing</span></div>
+        <div>
+          <div style="font-weight:600;">Trip (elamys-trip2) aggregates</div>
+          <div class="src-detail">
+            No <code>data/trip-aggregates.json</code> in the repo. Run
+            <code>python3 scripts/trip_aggregate.py &lt;CSV&gt;</code> locally and
+            commit the output to see Trip alongside Bokún.
+          </div>
+        </div>
+        <div class="num"><code>—</code></div>
+      </div>"""
+
     status = f"""
       <div class="status-row">
         <div><span class="pill ok">OK</span></div>
@@ -517,20 +678,12 @@ def render_html(label: str, t: Totals, wow: Totals | None,
           <div style="font-weight:600;">Bokún REST API</div>
           <div class="src-detail">
             Endpoint: <code>POST /booking.json/product-booking-search</code><br>
-            Scope: Museokortti booking channel (server-side key)<br>
+            Scope: server-side key (channel "ELAMYSSUOMI activity shop" id 212670)<br>
             Window: creationDateRange = {sales_label}
           </div>
         </div>
         <div class="num"><code>{t.record_count} lines</code></div>
-      </div>
-      <div class="status-row">
-        <div><span class="pill warn">Skipped</span></div>
-        <div>
-          <div style="font-weight:600;">Trip (elamys-trip2) export</div>
-          <div class="src-detail">Disabled in v1 — Bokún-only per current setup.</div>
-        </div>
-        <div class="num"><code>—</code></div>
-      </div>
+      </div>{trip_status}
     """
 
     return f"""{_common_head(f"Museokauppa Dashboard — {label}")}
@@ -550,31 +703,39 @@ def render_html(label: str, t: Totals, wow: Totals | None,
 
     {_nav("today")}
 
-    <div class="grid-kpi">
-      <div class="kpi"><div class="label">Orders</div>
-        <div class="value">{t.orders}</div>
-        <div class="delta">unique parent bookings</div></div>
-      <div class="kpi"><div class="label">Gross sales (BM), EUR</div>
-        <div class="value">{euro(t.gross_eur)}</div>
-        <div class="delta">bruttomyynti, not FAS LV</div></div>
-      <div class="kpi"><div class="label">AOV, EUR</div>
-        <div class="value">{euro(aov)}</div>
-        <div class="delta">gross ÷ orders</div></div>
-      <div class="kpi"><div class="label">WoW Δ</div>
-        <div class="value">{wow_value_html}</div>
-        {wow_html}</div>
-    </div>
+    <section class="card">
+      <h2>Bokún · activity shop · {html.escape(label)}</h2>
+      <div class="grid-kpi" style="margin-bottom:0;">
+        <div class="kpi"><div class="label">Orders</div>
+          <div class="value">{t.orders}</div>
+          <div class="delta">unique parent bookings</div></div>
+        <div class="kpi"><div class="label">Gross sales (BM), EUR</div>
+          <div class="value">{euro(t.gross_eur)}</div>
+          <div class="delta">bruttomyynti, not FAS LV</div></div>
+        <div class="kpi"><div class="label">AOV, EUR</div>
+          <div class="value">{euro(aov)}</div>
+          <div class="delta">gross ÷ orders</div></div>
+        <div class="kpi"><div class="label">WoW Δ</div>
+          <div class="value">{wow_value_html}</div>
+          {wow_html}</div>
+      </div>
+    </section>
+
+    {trip_kpis_html}
 
     <section class="card">
-      <h2>Top 10 products</h2>
+      <h2>Bokún · top 10 products</h2>
       <table>
         <thead><tr><th>#</th><th>Product</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
         <tbody>{top_rows}</tbody>
       </table>
     </section>
 
+    {trip_top_html}
+    {trip_pipe_html}
+
     <section class="card">
-      <h2>Geography split</h2>
+      <h2>Bokún · geography split</h2>
       {geo}
     </section>
 
@@ -623,9 +784,12 @@ def render_status_page(label: str, generated_at: str, error: str) -> str:
 # ---------------------------------------------------------------------------
 
 
-def render_trends(hist: dict[str, Any], generated_at: str) -> str:
+def render_trends(hist: dict[str, Any], generated_at: str,
+                  trip: dict[str, Any] | None = None) -> str:
     days = hist.get("days") or {}
-    if not days:
+    trip_days = (trip or {}).get("days") or {}
+    trip_meta = {k: v for k, v in (trip or {}).items() if k != "days"}
+    if not days and not trip_days:
         body = ("<section class='card'><h2>Trends</h2>"
                 "<div style='color:var(--muted);font-size:13px;'>"
                 "No history yet. Run the <em>Backfill history</em> workflow "
@@ -779,8 +943,184 @@ def render_trends(hist: dict[str, Any], generated_at: str) -> str:
     else:
         top_rows = "<tr><td colspan='4' style='color:var(--muted);padding:14px 10px;'>No product data in last 30 days.</td></tr>"
 
-    first_date = sorted_days[0]
-    last_date = sorted_days[-1]
+    first_date = sorted_days[0] if sorted_days else "—"
+    last_date = sorted_days[-1] if sorted_days else "—"
+
+    # =====================================================================
+    # Trip · B&E packages — daily 30d chart, monthly 12m, top packages 30d
+    # =====================================================================
+    trip_sections_html = ""
+    if trip_days:
+        # 30-day daily
+        t_daily = []
+        for i in range(30, 0, -1):
+            d = today - timedelta(days=i)
+            rec = trip_days.get(d.isoformat())
+            conf = float((rec or {}).get("gross_eur_confirmed") or 0)
+            confn = int((rec or {}).get("orders_confirmed") or 0)
+            t_daily.append((d, conf, confn))
+        t_max = max((g for _, g, _ in t_daily), default=0.0) or 1.0
+        t_bar_w = 28; t_gap = 6; t_ch_h = 160
+        t_lpad = 60; t_rpad = 10
+        t_tw = t_lpad + len(t_daily) * (t_bar_w + t_gap) + t_rpad
+        t_yticks = "".join(
+            f'<line x1="{t_lpad-4}" y1="{t_ch_h - t_ch_h*p/100}" '
+            f'x2="{t_tw-t_rpad}" y2="{t_ch_h - t_ch_h*p/100}" '
+            f'stroke="rgba(148,163,184,0.15)" stroke-width="1"/>'
+            f'<text x="{t_lpad-8}" y="{t_ch_h - t_ch_h*p/100 + 3}" '
+            f'fill="#94a3b8" font-size="10" text-anchor="end">'
+            f'{int(t_max*p/100):,}</text>'.replace(",", " ")
+            for p in (0, 25, 50, 75, 100)
+        )
+        t_bars = ""
+        for i, (d, g, o) in enumerate(t_daily):
+            x = t_lpad + i * (t_bar_w + t_gap)
+            h = int((g / t_max) * t_ch_h) if t_max > 0 else 0
+            y = t_ch_h - h
+            color = "#a78bfa" if g > 0 else "var(--bar-dim)"  # purple accent for Trip
+            t_bars += (
+                f'<rect x="{x}" y="{y}" width="{t_bar_w}" height="{max(h,1)}" '
+                f'fill="{color}" rx="2">'
+                f'<title>{d.isoformat()} ({d.strftime("%a")}) — '
+                f'{int(g):,} € · {o} orders</title></rect>'.replace(",", " ")
+            )
+            if i % 5 == 0 or i == len(t_daily) - 1:
+                t_bars += (
+                    f'<text x="{x + t_bar_w/2}" y="{t_ch_h + 14}" fill="#94a3b8" '
+                    f'font-size="10" text-anchor="middle">{d.strftime("%d.%m")}</text>'
+                )
+        t_chart = (
+            f'<svg class="chart" viewBox="0 0 {t_tw} {t_ch_h + 24}" '
+            f'preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">'
+            f'{t_yticks}{t_bars}</svg>'
+            f'<div class="chart-caption">Confirmed EUR per day · last 30 days · Trip</div>'
+        )
+
+        # 12-month table for Trip
+        t_month_totals: dict[str, dict[str, float]] = defaultdict(
+            lambda: {"conf_n": 0, "conf_eur": 0.0, "pend_n": 0,
+                     "pend_eur": 0.0, "days": 0}
+        )
+        for ds, rec in trip_days.items():
+            try:
+                d = date.fromisoformat(ds)
+            except ValueError:
+                continue
+            k = d.strftime("%Y-%m")
+            t_month_totals[k]["conf_n"]   += int(rec.get("orders_confirmed") or 0)
+            t_month_totals[k]["conf_eur"] += float(rec.get("gross_eur_confirmed") or 0)
+            t_month_totals[k]["pend_n"]   += int(rec.get("orders_pending") or 0)
+            t_month_totals[k]["pend_eur"] += float(rec.get("gross_eur_pending") or 0)
+            t_month_totals[k]["days"] += 1
+
+        t_month_keys = []
+        yr, mo = today.year, today.month
+        for _ in range(12):
+            t_month_keys.append(f"{yr:04d}-{mo:02d}")
+            mo -= 1
+            if mo == 0:
+                mo = 12; yr -= 1
+        t_month_keys = list(reversed(t_month_keys))
+        t_month_rows = ""
+        prev_eur = None
+        for mk in t_month_keys:
+            m = t_month_totals.get(mk, {"conf_n": 0, "conf_eur": 0.0,
+                                        "pend_n": 0, "pend_eur": 0.0, "days": 0})
+            conf_n = int(m["conf_n"])
+            conf_eur = float(m["conf_eur"])
+            aov = conf_eur / conf_n if conf_n else 0.0
+            if prev_eur is None or prev_eur == 0:
+                delta_html = '<span class="flat">—</span>'
+            else:
+                pct = (conf_eur - prev_eur) / prev_eur * 100
+                cls = "pos" if pct > 0 else ("neg" if pct < 0 else "flat")
+                arrow = "▲" if pct > 0 else ("▼" if pct < 0 else "·")
+                delta_html = f'<span class="{cls}">{arrow} {pct:+.1f}%</span>'
+            prev_eur = conf_eur
+            t_month_rows += (
+                f"<tr><td>{mk}</td>"
+                f"<td class='num'>{conf_n}</td>"
+                f"<td class='num'>{euro(conf_eur)}</td>"
+                f"<td class='num'>{euro(aov)}</td>"
+                f"<td class='num'>{delta_html}</td>"
+                f"<td class='num'>{int(m['pend_n'])}</td>"
+                f"<td class='num'>{euro(m['pend_eur'])}</td></tr>"
+            )
+
+        # Rolling top packages last 30 days
+        t_pkg_tot: dict[str, dict[str, float]] = defaultdict(
+            lambda: {"orders": 0, "eur": 0.0}
+        )
+        for i in range(30):
+            d = today - timedelta(days=i + 1)
+            rec = trip_days.get(d.isoformat())
+            if not rec:
+                continue
+            for name, p in (rec.get("by_package") or {}).items():
+                t_pkg_tot[name]["orders"] += int(p.get("orders") or 0)
+                t_pkg_tot[name]["eur"]    += float(p.get("eur") or 0)
+        t_top = sorted(t_pkg_tot.items(), key=lambda kv: -kv[1]["eur"])[:15]
+        if t_top:
+            t_top_rows = "\n".join(
+                f"<tr><td>{i+1}</td><td>{html.escape(name)}</td>"
+                f"<td class='num'>{int(d['orders'])}</td>"
+                f"<td class='num'>{euro(d['eur'])}</td></tr>"
+                for i, (name, d) in enumerate(t_top)
+            )
+        else:
+            t_top_rows = "<tr><td colspan='4' style='color:var(--muted);padding:14px 10px;'>No Trip packages in last 30 days.</td></tr>"
+
+        # 30d summary KPIs
+        t30_eur = sum(g for _, g, _ in t_daily)
+        t30_orders = sum(o for _, _, o in t_daily)
+        t30_aov = t30_eur / t30_orders if t30_orders else 0.0
+        t30_days = sum(1 for _, g, _ in t_daily if g > 0)
+
+        trip_updated = trip_meta.get("updated") or "—"
+
+        trip_sections_html = f"""
+    <section class="card" style="border-left:3px solid #a78bfa;">
+      <h2>Trip · B&amp;E packages · last 30 days</h2>
+      <div class="grid-kpi" style="margin-bottom:16px;">
+        <div class="kpi"><div class="label">Confirmed orders (30d)</div>
+          <div class="value">{t30_orders}</div>
+          <div class="delta">{t30_days} days with data</div></div>
+        <div class="kpi"><div class="label">Confirmed gross (30d)</div>
+          <div class="value">{euro(t30_eur)}</div>
+          <div class="delta">bruttomyynti, not FAS LV</div></div>
+        <div class="kpi"><div class="label">Trip AOV (30d)</div>
+          <div class="value">{euro(t30_aov)}</div>
+          <div class="delta">gross ÷ orders</div></div>
+        <div class="kpi"><div class="label">Data refreshed</div>
+          <div class="value" style="font-size:14px;">{html.escape(str(trip_updated)[:10])}</div>
+          <div class="delta">PII-free aggregates</div></div>
+      </div>
+      {t_chart}
+    </section>
+
+    <section class="card">
+      <h2>Trip · monthly · last 12 months</h2>
+      <table>
+        <thead><tr>
+          <th>Month</th>
+          <th class="num">Confirmed</th>
+          <th class="num">Gross (EUR)</th>
+          <th class="num">AOV</th>
+          <th class="num">MoM Δ</th>
+          <th class="num">Pending</th>
+          <th class="num">Pending (EUR)</th>
+        </tr></thead>
+        <tbody>{t_month_rows}</tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Trip · top 15 packages · rolling 30 days</h2>
+      <table>
+        <thead><tr><th>#</th><th>Package</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
+        <tbody>{t_top_rows}</tbody>
+      </table>
+    </section>"""
 
     return f"""{_common_head("Museokauppa Dashboard — Trends")}
 <body>
@@ -834,15 +1174,17 @@ def render_trends(hist: dict[str, Any], generated_at: str) -> str:
     </section>
 
     <section class="card">
-      <h2>Top 15 products · rolling 30 days</h2>
+      <h2>Bokún · top 15 products · rolling 30 days</h2>
       <table>
         <thead><tr><th>#</th><th>Product</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
         <tbody>{top_rows}</tbody>
       </table>
     </section>
 
+    {trip_sections_html}
+
     <footer>
-      Museokauppa Dashboard · Trends view · data source: Bokún Museokortti channel ·
+      Museokauppa Dashboard · Trends view · sources: Bokún REST (activity shop) + Trip (B&amp;E packages) ·
       "Gross sales (BM)" = bruttomyynti (not FAS liikevaihto)
     </footer>
   </div>
@@ -896,6 +1238,13 @@ def run_daily() -> int:
     print(f"[museokauppa] daily target range {d_from} → {d_to} ({label})")
 
     hist = load_history()
+    trip = load_trip_aggregates()
+    trip_meta = {k: v for k, v in trip.items() if k != "days"} if trip else None
+    trip_totals = trip_range_totals(trip, d_from, d_to) if trip.get("days") else None
+    wow_from_base = d_from - timedelta(days=7)
+    wow_to_base = d_to - timedelta(days=7)
+    trip_wow_totals = (trip_range_totals(trip, wow_from_base, wow_to_base)
+                       if trip.get("days") else None)
 
     try:
         # For Mondays this is 3 days; for other days 1 day. We persist per-day
@@ -930,9 +1279,18 @@ def run_daily() -> int:
             print(f"[museokauppa] WoW fetch failed (non-fatal): {e}")
             wow = None
 
-        html_out = render_html(label, aggregated, wow, gen_at, label)
-        summary = (f"orders={aggregated.orders} gross={aggregated.gross_eur:.0f}EUR "
-                   f"cancellations={aggregated.cancellations}")
+        html_out = render_html(label, aggregated, wow, gen_at, label,
+                                trip=trip_totals, trip_wow=trip_wow_totals,
+                                trip_meta=trip_meta)
+        trip_summary = ""
+        if trip_totals is not None:
+            trip_summary = (f" | trip_conf={trip_totals['orders_confirmed']}/"
+                            f"{trip_totals['gross_eur_confirmed']:.0f}EUR "
+                            f"pend={trip_totals['orders_pending']}/"
+                            f"{trip_totals['gross_eur_pending']:.0f}EUR")
+        summary = (f"bokun orders={aggregated.orders} "
+                   f"gross={aggregated.gross_eur:.0f}EUR "
+                   f"cancellations={aggregated.cancellations}{trip_summary}")
     except BokunError as e:
         print(f"[museokauppa] FETCH FAILED: {e}", file=sys.stderr)
         html_out = render_status_page(label, gen_at, str(e))
@@ -945,7 +1303,7 @@ def run_daily() -> int:
 
     save_history(hist)
     (DOCS / "trends.html").write_text(
-        render_trends(hist, gen_at), encoding="utf-8"
+        render_trends(hist, gen_at, trip=trip), encoding="utf-8"
     )
     write_index()
 
@@ -986,8 +1344,9 @@ def run_backfill(from_date: date) -> int:
             print(f"[museokauppa] {d.isoformat()} → FAILED: {e}", file=sys.stderr)
 
     save_history(hist)
+    trip = load_trip_aggregates()
     (DOCS / "trends.html").write_text(
-        render_trends(hist, gen_at), encoding="utf-8"
+        render_trends(hist, gen_at, trip=trip), encoding="utf-8"
     )
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     (DOCS / "robots.txt").write_text(

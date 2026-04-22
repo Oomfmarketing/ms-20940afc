@@ -1,0 +1,3570 @@
+{
+  "assumptions": {
+    "cancelled_status": "Status=2",
+    "confirmed_status": "Status=1",
+    "currency_handling": "Non-EUR amounts recorded as-is — no FX conversion in v1",
+    "pending_status": "Status=0 or empty/unknown",
+    "sales_day_field": "Date (order creation timestamp, truncated to date)",
+    "test_rows": "Excluded if package name contains 'testi' (case-insensitive)"
+  },
+  "days": {
+    "2022-02-01": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1680.0,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 1680.0,
+      "gross_eur_pending": 1386.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 2
+    },
+    "2022-02-03": {
+      "by_country": {
+        "FI": 6
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 4158.0,
+          "orders": 6
+        }
+      },
+      "currencies": {
+        "EUR": 7
+      },
+      "gross_eur_confirmed": 4158.0,
+      "gross_eur_pending": 743.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 6,
+      "orders_pending": 1
+    },
+    "2022-02-10": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 693.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 693.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-01-17": {
+      "by_country": {
+        "FI": 5,
+        "RO": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1960.0,
+          "orders": 6
+        }
+      },
+      "currencies": {
+        "EUR": 14
+      },
+      "gross_eur_confirmed": 1960.0,
+      "gross_eur_pending": 2295.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 6,
+      "orders_pending": 8
+    },
+    "2024-01-23": {
+      "by_country": {
+        "FI": 1,
+        "RO": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 348.0,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 348.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2024-01-31": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1690.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1690.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-03-13": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1190.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1190.0,
+      "gross_eur_pending": 1190.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2024-03-28": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1786.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1786.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-04-16": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 20.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 20.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-04-24": {
+      "by_country": {
+        "FI": 1,
+        "RO": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 50.0,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 50.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2024-04-25": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 20.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 20.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-08-22": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 185.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 185.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-09-26": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 305.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 2
+    },
+    "2024-10-11": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1277.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1277.0,
+      "gross_eur_pending": 1277.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2024-10-31": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1436.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1436.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-11-12": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1277.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1277.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-11-15": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 259.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 259.8,
+      "gross_eur_pending": 362.4,
+      "orders_cancelled": 1,
+      "orders_confirmed": 1,
+      "orders_pending": 3
+    },
+    "2024-11-21": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 1,
+      "orders_confirmed": 0,
+      "orders_pending": 0
+    },
+    "2024-11-28": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 896.0,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 896.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2024-11-29": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 448.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 448.0,
+      "gross_eur_pending": 448.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2024-12-03": {
+      "by_country": {
+        "BE": 1,
+        "FI": 1,
+        "IT": 1,
+        "NL": 2,
+        "SE": 1,
+        "US": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1693.9,
+          "orders": 8
+        }
+      },
+      "currencies": {
+        "EUR": 17
+      },
+      "gross_eur_confirmed": 1693.9,
+      "gross_eur_pending": 1529.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 8,
+      "orders_pending": 9
+    },
+    "2024-12-04": {
+      "by_country": {
+        "SE": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 253.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 253.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-12-05": {
+      "by_country": {
+        "IE": 3,
+        "RO": 1,
+        "US": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 811.8,
+          "orders": 6
+        }
+      },
+      "currencies": {
+        "EUR": 8
+      },
+      "gross_eur_confirmed": 811.8,
+      "gross_eur_pending": 229.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 6,
+      "orders_pending": 2
+    },
+    "2024-12-06": {
+      "by_country": {
+        "NL": 1,
+        "SE": 1,
+        "US": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 404.4,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 404.4,
+      "gross_eur_pending": 209.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 2
+    },
+    "2024-12-09": {
+      "by_country": {
+        "CH": 1,
+        "NO": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 409.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 409.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2024-12-10": {
+      "by_country": {
+        "NL": 2,
+        "NO": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 493.9,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 10
+      },
+      "gross_eur_confirmed": 493.9,
+      "gross_eur_pending": 2825.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 7
+    },
+    "2024-12-11": {
+      "by_country": {
+        "BE": 1,
+        "CZ": 1,
+        "ES": 1,
+        "GR": 1,
+        "IN": 1,
+        "PT": 1,
+        "US": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1119.0,
+          "orders": 7
+        }
+      },
+      "currencies": {
+        "EUR": 8
+      },
+      "gross_eur_confirmed": 1119.0,
+      "gross_eur_pending": 114.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 7,
+      "orders_pending": 1
+    },
+    "2024-12-12": {
+      "by_country": {
+        "DE": 2,
+        "ES": 1,
+        "GB": 1,
+        "IL": 1,
+        "NL": 1,
+        "NO": 1,
+        "SE": 1,
+        "US": 3
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1721.8,
+          "orders": 11
+        }
+      },
+      "currencies": {
+        "EUR": 16
+      },
+      "gross_eur_confirmed": 1721.8,
+      "gross_eur_pending": 852.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 11,
+      "orders_pending": 5
+    },
+    "2024-12-13": {
+      "by_country": {
+        "BE": 1,
+        "CH": 2,
+        "FI": 2,
+        "GB": 1,
+        "MC": 2,
+        "NL": 1,
+        "NO": 1,
+        "US": 3
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 2330.2,
+          "orders": 13
+        }
+      },
+      "currencies": {
+        "EUR": 21
+      },
+      "gross_eur_confirmed": 2330.2,
+      "gross_eur_pending": 1295.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 13,
+      "orders_pending": 8
+    },
+    "2024-12-14": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 104.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2024-12-15": {
+      "by_country": {
+        "GB": 1,
+        "IT": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 358.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 358.6,
+      "gross_eur_pending": 253.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2024-12-16": {
+      "by_country": {
+        "CH": 1,
+        "DE": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 260.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 260.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2024-12-17": {
+      "by_country": {
+        "FI": 1,
+        "GB": 1,
+        "US": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 805.2,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 805.2,
+      "gross_eur_pending": 349.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 1
+    },
+    "2024-12-18": {
+      "by_country": {
+        "AT": 1,
+        "GB": 1,
+        "US": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 768.2,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 768.2,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 0
+    },
+    "2024-12-19": {
+      "by_country": {
+        "AT": 1,
+        "IE": 1,
+        "IL": 1,
+        "SE": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 629.2,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 629.2,
+      "gross_eur_pending": 155.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 1
+    },
+    "2024-12-20": {
+      "by_country": {
+        "FI": 7,
+        "TH": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 10324.95,
+          "orders": 8
+        }
+      },
+      "currencies": {
+        "EUR": 9
+      },
+      "gross_eur_confirmed": 10324.95,
+      "gross_eur_pending": 104.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 8,
+      "orders_pending": 1
+    },
+    "2024-12-22": {
+      "by_country": {
+        "IT": 1,
+        "PL": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 507.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 507.6,
+      "gross_eur_pending": 253.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2024-12-23": {
+      "by_country": {
+        "NL": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 104.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 104.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2024-12-24": {
+      "by_country": {
+        "GB": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 114.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 114.8,
+      "gross_eur_pending": 104.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2024-12-26": {
+      "by_country": {
+        "RO": 1,
+        "ZA": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 368.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 368.6,
+      "gross_eur_pending": 114.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2024-12-30": {
+      "by_country": {
+        "DE": 3,
+        "FR": 1,
+        "IL": 3,
+        "IT": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1196.0,
+          "orders": 8
+        }
+      },
+      "currencies": {
+        "EUR": 10
+      },
+      "gross_eur_confirmed": 1196.0,
+      "gross_eur_pending": 507.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 8,
+      "orders_pending": 2
+    },
+    "2025-01-02": {
+      "by_country": {
+        "FI": 1,
+        "GB": 1,
+        "US": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 866.2,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 866.2,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2025-01-03": {
+      "by_country": {
+        "CH": 1,
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 209.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 209.6,
+      "gross_eur_pending": 104.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2025-01-06": {
+      "by_country": {
+        "FI": 1,
+        "GB": 1,
+        "NL": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 442.9,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 442.9,
+      "gross_eur_pending": 114.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 1
+    },
+    "2025-01-07": {
+      "by_country": {
+        "BR": 1,
+        "FI": 1,
+        "LV": 1,
+        "US": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 748.8,
+          "orders": 5
+        }
+      },
+      "currencies": {
+        "EUR": 9
+      },
+      "gross_eur_confirmed": 748.8,
+      "gross_eur_pending": 463.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 4
+    },
+    "2025-01-08": {
+      "by_country": {
+        "FI": 2,
+        "IT": 1,
+        "US": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 686.2,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 6
+      },
+      "gross_eur_confirmed": 686.2,
+      "gross_eur_pending": 776.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 2
+    },
+    "2025-01-09": {
+      "by_country": {
+        "CH": 1,
+        "DE": 1,
+        "FI": 1,
+        "GB": 1,
+        "IN": 1,
+        "IT": 1,
+        "RO": 1,
+        "US": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 2058.8,
+          "orders": 8
+        }
+      },
+      "currencies": {
+        "EUR": 15
+      },
+      "gross_eur_confirmed": 2058.8,
+      "gross_eur_pending": 896.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 8,
+      "orders_pending": 7
+    },
+    "2025-01-10": {
+      "by_country": {
+        "NL": 1,
+        "US": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 224.4,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 224.4,
+      "gross_eur_pending": 358.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 3
+    },
+    "2025-01-12": {
+      "by_country": {
+        "LV": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 145.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 145.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-01-13": {
+      "by_country": {
+        "FI": 1,
+        "GB": 1,
+        "LT": 1,
+        "NL": 1,
+        "PT": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 744.0,
+          "orders": 5
+        }
+      },
+      "currencies": {
+        "EUR": 6
+      },
+      "gross_eur_confirmed": 744.0,
+      "gross_eur_pending": 114.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 1
+    },
+    "2025-01-14": {
+      "by_country": {
+        "FI": 1,
+        "IL": 1,
+        "NL": 1,
+        "SE": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 565.0,
+          "orders": 5
+        }
+      },
+      "currencies": {
+        "EUR": 6
+      },
+      "gross_eur_confirmed": 565.0,
+      "gross_eur_pending": 104.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 1
+    },
+    "2025-01-15": {
+      "by_country": {
+        "CH": 1,
+        "CZ": 1,
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 2298.4,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 2298.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2025-01-16": {
+      "by_country": {
+        "GB": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 114.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 114.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-01-20": {
+      "by_country": {
+        "DK": 1,
+        "EE": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 416.4,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 416.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2025-01-21": {
+      "by_country": {
+        "DO": 1,
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 527.2,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 527.2,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2025-01-22": {
+      "by_country": {
+        "GB": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 373.4,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 373.4,
+      "gross_eur_pending": 253.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2025-01-23": {
+      "by_country": {
+        "CO": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 155.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 155.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-01-24": {
+      "by_country": {
+        "GB": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 253.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 253.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-01-27": {
+      "by_country": {
+        "BE": 1,
+        "FI": 1,
+        "SK": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 473.4,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 473.4,
+      "gross_eur_pending": 145.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 1
+    },
+    "2025-01-28": {
+      "by_country": {
+        "FI": 1,
+        "GB": 1,
+        "LT": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 710.4,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 710.4,
+      "gross_eur_pending": 163.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 1
+    },
+    "2025-01-29": {
+      "by_country": {
+        "EE": 1,
+        "FI": 1,
+        "GB": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 363.4,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 363.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2025-01-31": {
+      "by_country": {
+        "IT": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 114.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 114.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-02-03": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 243.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 243.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-02-04": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 876.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 876.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-03-25": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 1,
+      "orders_confirmed": 0,
+      "orders_pending": 0
+    },
+    "2025-04-09": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 1103.1,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1103.1,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-08-28": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 305.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 305.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-09-17": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 1515.0,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1515.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2025-09-27": {
+      "by_country": {
+        "GB": 1
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 505.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 505.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-10-01": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 305.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 305.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-11-24": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Rallipaketti Break Sokos Hotel Himos 2 yötä": {
+          "eur": 1780.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1780.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-02": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3590.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 3590.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-08": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1772.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1772.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-10": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1449.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1449.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-11": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1095.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1095.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-15": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1891.1,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1891.1,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-16": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 2600.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1512.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 6,
+        "SEK": 1
+      },
+      "gross_eur_confirmed": 4112.8,
+      "gross_eur_pending": 42258.88,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 5
+    },
+    "2025-12-18": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Formula 1 Barcelona, Grupotel Gran Via 678, Norwegian 3 vrk": {
+          "eur": 2890.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1525.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 4415.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2025-12-19": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 910.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2025-12-20": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 3290.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2025-12-21": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1056.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1056.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-22": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 970.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 970.4,
+      "gross_eur_pending": 9145.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 3
+    },
+    "2025-12-25": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2010.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 2010.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-26": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3120.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 3120.0,
+      "gross_eur_pending": 6910.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 2
+    },
+    "2025-12-27": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Formula 1 Barcelona, Grupotel Gran Via 678, Norwegian 3 vrk": {
+          "eur": 2890.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 2890.0,
+      "gross_eur_pending": 2010.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2025-12-28": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1090.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1090.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2025-12-29": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 2080.0,
+          "orders": 1
+        },
+        "Formula 1 Madrid 2026": {
+          "eur": 3613.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 5693.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2025-12-30": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3310.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1340.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 4650.8,
+      "gross_eur_pending": 4202.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 2
+    },
+    "2025-12-31": {
+      "by_country": {
+        "FI": 5
+      },
+      "by_package": {
+        "Formula 1 Monza, Lido Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 7580.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 7813.6,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 15393.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 0
+    },
+    "2026-01-01": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1185.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1185.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-02": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Rallipaketti Break Sokos Hotel Himos 2 yötä": {
+          "eur": 3560.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1230.4,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 4790.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-01-04": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Formula 1 Monza, Leonardo Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 3720.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 3720.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-05": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 305.0,
+          "orders": 1
+        },
+        "Formula 1 Monza, Nyx Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 5200.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 5505.0,
+      "gross_eur_pending": 5200.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-01-06": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Avovesiuintileiri Seget Donji, Kroatia": {
+          "eur": 3590.0,
+          "orders": 2
+        },
+        "Raviristeily 2026": {
+          "eur": 1632.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 5222.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-01-07": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 6412.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 2
+    },
+    "2026-01-08": {
+      "by_country": {
+        "FI": 4
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 4410.0,
+          "orders": 1
+        },
+        "Avovesiuintileiri Seget Donji, Kroatia": {
+          "eur": 3206.0,
+          "orders": 1
+        },
+        "Formula 1 Monza, Nyx Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 5200.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 938.2,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 13754.2,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 0
+    },
+    "2026-01-09": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1460.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1460.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-10": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 1010.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1010.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-11": {
+      "by_country": {
+        "FI": 5
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 6220.0,
+          "orders": 1
+        },
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 505.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 4809.1,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 9
+      },
+      "gross_eur_confirmed": 11534.1,
+      "gross_eur_pending": 5269.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 4
+    },
+    "2026-01-12": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 505.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1185.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 1690.6,
+      "gross_eur_pending": 2371.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 2
+    },
+    "2026-01-13": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 4236.5,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 4236.5,
+      "gross_eur_pending": 2820.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 2
+    },
+    "2026-01-14": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3110.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 970.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 8
+      },
+      "gross_eur_confirmed": 4080.4,
+      "gross_eur_pending": 15200.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 6
+    },
+    "2026-01-15": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 1995.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-01-16": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 4965.0,
+      "orders_cancelled": 1,
+      "orders_confirmed": 0,
+      "orders_pending": 2
+    },
+    "2026-01-17": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1340.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1340.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-18": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1410.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1410.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-19": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1340.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1340.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 1,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-20": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 910.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 910.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-21": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 3976.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 3976.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-22": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1181.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1181.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-25": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 505.0,
+          "orders": 1
+        },
+        "F1 Budapest, Hotel City Inn, Finnair 4 yötä": {
+          "eur": 4050.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1185.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 5740.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-01-26": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1538.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1538.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-01-28": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 505.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 910.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1415.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2026-01-30": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 2440.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1228.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 3668.4,
+      "gross_eur_pending": 1228.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-02-04": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3860.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 3414.4,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 7274.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 1,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-02-05": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2802.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 2802.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-02-07": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2671.2,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 2671.2,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-02-09": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 910.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-02-11": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1460.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1460.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-02-12": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Formula 1 Monza, Nyx Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 4220.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 3539.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 7759.6,
+      "gross_eur_pending": 2569.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 1
+    },
+    "2026-02-14": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 970.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 970.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-02-15": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3520.0,
+          "orders": 1
+        },
+        "F1 Budapest, Di Verdi Imperial, Finnair 4 yötä": {
+          "eur": 2405.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1410.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 6
+      },
+      "gross_eur_confirmed": 7335.4,
+      "gross_eur_pending": 3436.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 3
+    },
+    "2026-02-17": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 1132.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-02-18": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2801.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 2801.6,
+      "gross_eur_pending": 2251.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 2
+    },
+    "2026-02-21": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1410.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1410.4,
+      "gross_eur_pending": 3710.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2026-02-22": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Formula 1 Monza, Leonardo Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 3720.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 3720.0,
+      "gross_eur_pending": 1410.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2026-02-23": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1410.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1410.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-02-24": {
+      "by_country": {
+        "FI": 6
+      },
+      "by_package": {
+        "F1 Abu Dhabi, Dukes the Palm, Finnair": {
+          "eur": 5380.0,
+          "orders": 1
+        },
+        "F1 Abu Dhabi, Elite Byblos, Finnair": {
+          "eur": 4580.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 4601.8,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 9
+      },
+      "gross_eur_confirmed": 14561.8,
+      "gross_eur_pending": 11730.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 6,
+      "orders_pending": 3
+    },
+    "2026-02-25": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1530.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1530.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-02-26": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Formula 1 Monza, Leonardo Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 4380.0,
+          "orders": 1
+        },
+        "Formula 1 Zandvoort, Finnair 4vrk": {
+          "eur": 4090.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1009.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 9479.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-02-27": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 4030.0,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 4030.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-02-28": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3255.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 2359.8,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 5614.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-03-01": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3910.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 970.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 4880.4,
+      "gross_eur_pending": 2530.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-03-02": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1095.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 1095.4,
+      "gross_eur_pending": 4405.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 2
+    },
+    "2026-03-03": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 5040.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 2138.5,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 7178.5,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-03-04": {
+      "by_country": {
+        "FI": 5
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 1010.0,
+          "orders": 2
+        },
+        "Raviristeily 2026": {
+          "eur": 3827.0,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 9
+      },
+      "gross_eur_confirmed": 4837.0,
+      "gross_eur_pending": 6983.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 4
+    },
+    "2026-03-05": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 1267.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-03-06": {
+      "by_country": {
+        "FI": 4
+      },
+      "by_package": {
+        "150+150km Sleep Over In Mikkeli": {
+          "eur": 505.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 3652.0,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 4157.0,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 0
+    },
+    "2026-03-07": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Formula 1 Monza, Leonardo Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 4680.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 3586.8,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 8266.8,
+      "gross_eur_pending": 2616.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 1
+    },
+    "2026-03-08": {
+      "by_country": {
+        "FI": 5
+      },
+      "by_package": {
+        "Formula 1 Monza, Lido Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 5385.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 5884.8,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 7
+      },
+      "gross_eur_confirmed": 11269.8,
+      "gross_eur_pending": 6495.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 2
+    },
+    "2026-03-09": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2526.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 2526.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-10": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 970.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 970.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-11": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 1340.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-03-12": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 4967.6,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 4967.6,
+      "gross_eur_pending": 2921.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 2
+    },
+    "2026-03-13": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "F1 Budapest, Di Verdi Imperial, Finnair 4 yötä": {
+          "eur": 10830.0,
+          "orders": 2
+        },
+        "Raviristeily 2026": {
+          "eur": 2334.5,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 13164.5,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 0
+    },
+    "2026-03-14": {
+      "by_country": {
+        "FI": 4
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3190.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 3496.8,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 6686.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 0
+    },
+    "2026-03-15": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "(no package name)": {
+          "eur": 3340.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 3340.0,
+      "gross_eur_pending": 10020.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 3
+    },
+    "2026-03-16": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1350.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1350.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-17": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1395.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1395.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-18": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1142.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1142.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-19": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1305.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 1305.6,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-20": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2704.9,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 2704.9,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2026-03-21": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "F1 Budapest, Di Verdi Imperial, Finnair 3 yötä": {
+          "eur": 2220.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 2220.0,
+      "gross_eur_pending": 7215.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 3
+    },
+    "2026-03-22": {
+      "by_country": {
+        "FI": 4
+      },
+      "by_package": {
+        "F1 Budapest, Di Verdi Imperial, Finnair 4 yötä": {
+          "eur": 3310.0,
+          "orders": 1
+        },
+        "Formula 1 Monza, Lido Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 7580.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1585.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 6
+      },
+      "gross_eur_confirmed": 12475.6,
+      "gross_eur_pending": 8550.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 2
+    },
+    "2026-03-23": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 5182.4,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 5182.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2026-03-24": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2801.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 2801.6,
+      "gross_eur_pending": 1340.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-03-25": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 5412.8,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 5412.8,
+      "gross_eur_pending": 1457.7,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-03-26": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 910.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-03-27": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1956.0,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 1956.0,
+      "gross_eur_pending": 670.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-03-28": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1450.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1450.8,
+      "gross_eur_pending": 970.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2026-03-29": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 910.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 910.4,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 0
+    },
+    "2026-03-30": {
+      "by_country": {},
+      "by_package": {},
+      "currencies": {
+        "EUR": 1
+      },
+      "gross_eur_confirmed": 0.0,
+      "gross_eur_pending": 1340.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 0,
+      "orders_pending": 1
+    },
+    "2026-03-31": {
+      "by_country": {
+        "FI": 6
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 10804.5,
+          "orders": 6
+        }
+      },
+      "currencies": {
+        "EUR": 7
+      },
+      "gross_eur_confirmed": 10804.5,
+      "gross_eur_pending": 1415.1,
+      "orders_cancelled": 0,
+      "orders_confirmed": 6,
+      "orders_pending": 1
+    },
+    "2026-04-01": {
+      "by_country": {
+        "FI": 5
+      },
+      "by_package": {
+        "OP Wimbledon 2026 - Court no 1 -paketti": {
+          "eur": 24900.0,
+          "orders": 3
+        },
+        "Pitbull - Im Back konserttimatka": {
+          "eur": 2180.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 615.2,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 9
+      },
+      "gross_eur_confirmed": 27695.2,
+      "gross_eur_pending": 33200.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 4
+    },
+    "2026-04-05": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1305.6,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 1305.6,
+      "gross_eur_pending": 7249.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 4
+    },
+    "2026-04-06": {
+      "by_country": {
+        "FI": 4
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 3637.5,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 8
+      },
+      "gross_eur_confirmed": 3637.5,
+      "gross_eur_pending": 3806.9,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 4
+    },
+    "2026-04-07": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1009.4,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 1009.4,
+      "gross_eur_pending": 1340.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 1
+    },
+    "2026-04-08": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "F1 Budapest, Di Verdi Imperial, Finnair 4 yötä": {
+          "eur": 3310.0,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 3310.0,
+      "gross_eur_pending": 4650.8,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 2
+    },
+    "2026-04-09": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Pitbull - Im Back konserttimatka": {
+          "eur": 2180.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1340.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 3520.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2026-04-10": {
+      "by_country": {
+        "FI": 5
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 6725.2,
+          "orders": 5
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 6725.2,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 5,
+      "orders_pending": 0
+    },
+    "2026-04-11": {
+      "by_country": {
+        "FI": 1
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 1637.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 4
+      },
+      "gross_eur_confirmed": 1637.8,
+      "gross_eur_pending": 4564.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 1,
+      "orders_pending": 3
+    },
+    "2026-04-12": {
+      "by_country": {
+        "FI": 4
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 5012.4,
+          "orders": 4
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 5012.4,
+      "gross_eur_pending": 1056.4,
+      "orders_cancelled": 0,
+      "orders_confirmed": 4,
+      "orders_pending": 1
+    },
+    "2026-04-14": {
+      "by_country": {
+        "FI": 3
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 4142.4,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 7
+      },
+      "gross_eur_confirmed": 4142.4,
+      "gross_eur_pending": 5603.2,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 4
+    },
+    "2026-04-15": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Formula 1 Monza, Leonardo Hotel, Finnair 3 ja 4 vrk": {
+          "eur": 4070.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1340.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 5410.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    },
+    "2026-04-16": {
+      "by_country": {
+        "FI": 6
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 5754.4,
+          "orders": 6
+        }
+      },
+      "currencies": {
+        "EUR": 8
+      },
+      "gross_eur_confirmed": 5754.4,
+      "gross_eur_pending": 1879.6,
+      "orders_cancelled": 0,
+      "orders_confirmed": 6,
+      "orders_pending": 2
+    },
+    "2026-04-17": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 2681.6,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 10
+      },
+      "gross_eur_confirmed": 2681.6,
+      "gross_eur_pending": 15623.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 8
+    },
+    "2026-04-19": {
+      "by_country": {
+        "DK": 1,
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 3712.0,
+          "orders": 3
+        }
+      },
+      "currencies": {
+        "EUR": 5
+      },
+      "gross_eur_confirmed": 3712.0,
+      "gross_eur_pending": 1249.9,
+      "orders_cancelled": 0,
+      "orders_confirmed": 3,
+      "orders_pending": 2
+    },
+    "2026-04-20": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "OP Wimbledon 2026 - Centre Court -paketti": {
+          "eur": 12400.0,
+          "orders": 1
+        },
+        "Raviristeily 2026": {
+          "eur": 1762.8,
+          "orders": 1
+        }
+      },
+      "currencies": {
+        "EUR": 3
+      },
+      "gross_eur_confirmed": 14162.8,
+      "gross_eur_pending": 12400.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 1
+    },
+    "2026-04-22": {
+      "by_country": {
+        "FI": 2
+      },
+      "by_package": {
+        "Raviristeily 2026": {
+          "eur": 3288.8,
+          "orders": 2
+        }
+      },
+      "currencies": {
+        "EUR": 2
+      },
+      "gross_eur_confirmed": 3288.8,
+      "gross_eur_pending": 0.0,
+      "orders_cancelled": 0,
+      "orders_confirmed": 2,
+      "orders_pending": 0
+    }
+  },
+  "skipped_test_rows": 7,
+  "source": "elamys-trip2 Dashboard-packages export",
+  "source_row_count": 615,
+  "updated": "2026-04-22T09:00:34Z"
+}
