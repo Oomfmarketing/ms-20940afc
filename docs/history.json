@@ -1,0 +1,206 @@
+{
+  "days": {
+    "2026-04-01": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-02": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-03": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-04": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-05": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-06": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-07": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-08": {
+      "by_country": {},
+      "by_product": {
+        "Saimaa Cycle Tour / Imatra - Helsinki Transfer": {
+          "eur": 340.0,
+          "orders": 1
+        },
+        "Saimaa Cycle Tour, Helsinki - Imatra - Transfer": {
+          "eur": 340.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 680.0,
+      "orders": 1,
+      "record_count": 2
+    },
+    "2026-04-09": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-10": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-11": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-12": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-13": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-14": {
+      "by_country": {},
+      "by_product": {
+        "IFME 2026 Tallinn Excursion": {
+          "eur": 800.0,
+          "orders": 3
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 800.0,
+      "orders": 3,
+      "record_count": 3
+    },
+    "2026-04-15": {
+      "by_country": {},
+      "by_product": {
+        "Dark stories of Turku - Private Group Walking Tour": {
+          "eur": 120.0,
+          "orders": 1
+        },
+        "IFME 2026 Tallinn Excursion": {
+          "eur": 100.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 220.0,
+      "orders": 2,
+      "record_count": 2
+    },
+    "2026-04-16": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-17": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-18": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-19": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
+    },
+    "2026-04-20": {
+      "by_country": {},
+      "by_product": {
+        "IFME 2026 Tallinn Excursion": {
+          "eur": 100.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 100.0,
+      "orders": 1,
+      "record_count": 1
+    },
+    "2026-04-21": {
+      "by_country": {},
+      "by_product": {
+        "IFME 2026 Tallinn Excursion": {
+          "eur": 400.0,
+          "orders": 3
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 400.0,
+      "orders": 3,
+      "record_count": 3
+    }
+  },
+  "updated": "2026-04-22T08:19:51Z"
+}
