@@ -1,0 +1,54 @@
+name: museokauppa-backfill
+
+# One-off backfill of the per-day history from Bokún. Run this manually
+# from the Actions tab whenever you want to extend the trend range further
+# back (or re-fetch a range after the source data changed).
+#
+# The start date is an input; the end is always "yesterday in Helsinki".
+# The workflow aggregates day-by-day into docs/history.json and re-renders
+# docs/trends.html, then commits both back to the repo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: "Start date (inclusive), YYYY-MM-DD"
+        required: true
+        default: "2026-04-01"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: museokauppa-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run backfill
+        env:
+          BOKUN_ACCESS_KEY: ${{ secrets.BOKUN_ACCESS_KEY }}
+          BOKUN_SECRET_KEY: ${{ secrets.BOKUN_SECRET_KEY }}
+        run: python scripts/build_dashboard.py --backfill "${{ inputs.from_date }}"
+
+      - name: Commit updated docs/
+        run: |
+          git config user.name  "museokauppa-bot"
+          git config user.email "museokauppa-bot@users.noreply.github.com"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No history changes to commit."
+          else
+            git commit -m "backfill: history from ${{ inputs.from_date }}"
+            git push
+          fi
