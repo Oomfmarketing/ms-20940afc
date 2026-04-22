@@ -58,20 +58,11 @@
     },
     "2026-04-08": {
       "by_country": {},
-      "by_product": {
-        "Saimaa Cycle Tour / Imatra - Helsinki Transfer": {
-          "eur": 340.0,
-          "orders": 1
-        },
-        "Saimaa Cycle Tour, Helsinki - Imatra - Transfer": {
-          "eur": 340.0,
-          "orders": 1
-        }
-      },
+      "by_product": {},
       "cancellations": 0,
-      "gross_eur": 680.0,
-      "orders": 1,
-      "record_count": 2
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
     },
     "2026-04-09": {
       "by_country": {},
@@ -108,99 +99,239 @@
     "2026-04-13": {
       "by_country": {},
       "by_product": {},
-      "cancellations": 0,
+      "cancellations": 1,
       "gross_eur": 0.0,
       "orders": 0,
-      "record_count": 0
+      "record_count": 1
     },
     "2026-04-14": {
       "by_country": {},
       "by_product": {
-        "IFME 2026 Tallinn Excursion": {
-          "eur": 800.0,
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 145.0,
+          "orders": 4
+        },
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 99.0,
+          "orders": 1
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 435.0,
           "orders": 3
+        },
+        "Day Trip from Tampere to Mikkeli: Muisti & Headquarters Museum Experience": {
+          "eur": 120.0,
+          "orders": 1
+        },
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 240.0,
+          "orders": 1
+        },
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        },
+        "Day trip from Helsinki to Mikkeli : Muisti Museum, Guided Tour & Kenk\u00e4vero": {
+          "eur": 130.0,
+          "orders": 1
+        },
+        "Summer Art Journey from Tampere to Helsinki": {
+          "eur": 109.0,
+          "orders": 1
         }
       },
       "cancellations": 0,
-      "gross_eur": 800.0,
-      "orders": 3,
-      "record_count": 3
+      "gross_eur": 1423.0,
+      "orders": 13,
+      "record_count": 13
     },
     "2026-04-15": {
       "by_country": {},
       "by_product": {
-        "Dark stories of Turku - Private Group Walking Tour": {
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 232.0,
+          "orders": 6
+        },
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 891.0,
+          "orders": 7
+        },
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 218.0,
+          "orders": 1
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 435.0,
+          "orders": 2
+        },
+        "Day Trip from Tampere to Mikkeli: Muisti & Headquarters Museum Experience": {
           "eur": 120.0,
           "orders": 1
         },
-        "IFME 2026 Tallinn Excursion": {
-          "eur": 100.0,
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 120.0,
+          "orders": 1
+        },
+        "Historic Ahlstr\u00f6m Voyage Day Trip from Helsinki": {
+          "eur": 676.0,
+          "orders": 4
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 2692.0,
+      "orders": 22,
+      "record_count": 22
+    },
+    "2026-04-16": {
+      "by_country": {},
+      "by_product": {
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 58.0,
+          "orders": 2
+        },
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 218.0,
+          "orders": 2
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 725.0,
+          "orders": 3
+        },
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 360.0,
+          "orders": 2
+        },
+        "Historic Ahlstr\u00f6m Voyage Day Trip from Helsinki": {
+          "eur": 338.0,
           "orders": 1
         }
       },
       "cancellations": 0,
-      "gross_eur": 220.0,
-      "orders": 2,
-      "record_count": 2
-    },
-    "2026-04-16": {
-      "by_country": {},
-      "by_product": {},
-      "cancellations": 0,
-      "gross_eur": 0.0,
-      "orders": 0,
-      "record_count": 0
+      "gross_eur": 1699.0,
+      "orders": 10,
+      "record_count": 10
     },
     "2026-04-17": {
       "by_country": {},
-      "by_product": {},
+      "by_product": {
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 232.0,
+          "orders": 4
+        },
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 396.0,
+          "orders": 2
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 290.0,
+          "orders": 2
+        },
+        "Day trip from Helsinki to Mikkeli : Muisti Museum, Guided Tour & Kenk\u00e4vero": {
+          "eur": 130.0,
+          "orders": 1
+        },
+        "Teatterimuseo Jorma Uotisen kanssa": {
+          "eur": 1305.0,
+          "orders": 30
+        }
+      },
       "cancellations": 0,
-      "gross_eur": 0.0,
-      "orders": 0,
-      "record_count": 0
+      "gross_eur": 2353.0,
+      "orders": 39,
+      "record_count": 39
     },
     "2026-04-18": {
       "by_country": {},
-      "by_product": {},
+      "by_product": {
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 319.0,
+          "orders": 6
+        },
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 297.0,
+          "orders": 3
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        },
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 240.0,
+          "orders": 1
+        },
+        "Teatterimuseo Jorma Uotisen kanssa": {
+          "eur": 29.0,
+          "orders": 1
+        }
+      },
       "cancellations": 0,
-      "gross_eur": 0.0,
-      "orders": 0,
-      "record_count": 0
+      "gross_eur": 1030.0,
+      "orders": 12,
+      "record_count": 12
     },
     "2026-04-19": {
       "by_country": {},
-      "by_product": {},
+      "by_product": {
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        }
+      },
       "cancellations": 0,
-      "gross_eur": 0.0,
-      "orders": 0,
-      "record_count": 0
+      "gross_eur": 145.0,
+      "orders": 1,
+      "record_count": 1
     },
     "2026-04-20": {
       "by_country": {},
       "by_product": {
-        "IFME 2026 Tallinn Excursion": {
-          "eur": 100.0,
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 58.0,
+          "orders": 1
+        },
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 99.0,
+          "orders": 1
+        },
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 218.0,
+          "orders": 2
+        },
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 120.0,
           "orders": 1
         }
       },
       "cancellations": 0,
-      "gross_eur": 100.0,
-      "orders": 1,
-      "record_count": 1
+      "gross_eur": 495.0,
+      "orders": 5,
+      "record_count": 5
     },
     "2026-04-21": {
       "by_country": {},
       "by_product": {
-        "IFME 2026 Tallinn Excursion": {
-          "eur": 400.0,
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 58.0,
+          "orders": 1
+        },
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 495.0,
           "orders": 3
+        },
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 290.0,
+          "orders": 1
+        },
+        "Historic Ahlstr\u00f6m Voyage Day Trip from Helsinki": {
+          "eur": 169.0,
+          "orders": 1
         }
       },
-      "cancellations": 0,
-      "gross_eur": 400.0,
-      "orders": 3,
-      "record_count": 3
+      "cancellations": 1,
+      "gross_eur": 1012.0,
+      "orders": 6,
+      "record_count": 7
     }
   },
-  "updated": "2026-04-22T08:19:51Z"
+  "updated": "2026-04-22T08:48:16Z"
 }
