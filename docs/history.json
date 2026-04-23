@@ -331,7 +331,28 @@
       "gross_eur": 1012.0,
       "orders": 6,
       "record_count": 7
+    },
+    "2026-04-22": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 891.0,
+          "orders": 6
+        },
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 218.0,
+          "orders": 1
+        },
+        "Historic Ahlstr\u00f6m Voyage Day Trip from Helsinki": {
+          "eur": 338.0,
+          "orders": 2
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 1447.0,
+      "orders": 9,
+      "record_count": 9
     }
   },
-  "updated": "2026-04-22T08:48:16Z"
+  "updated": "2026-04-23T06:11:44Z"
 }
