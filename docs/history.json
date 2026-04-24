@@ -352,7 +352,20 @@
       "gross_eur": 1447.0,
       "orders": 9,
       "record_count": 9
+    },
+    "2026-04-23": {
+      "by_country": {},
+      "by_product": {
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 87.0,
+          "orders": 3
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 87.0,
+      "orders": 3,
+      "record_count": 3
     }
   },
-  "updated": "2026-04-23T06:11:44Z"
+  "updated": "2026-04-24T06:16:14Z"
 }
