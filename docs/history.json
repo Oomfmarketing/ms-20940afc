@@ -446,7 +446,24 @@
       "gross_eur": 831.0,
       "orders": 6,
       "record_count": 6
+    },
+    "2026-04-29": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 290.0,
+          "orders": 1
+        },
+        "Teatterimuseo Jorma Uotisen kanssa": {
+          "eur": 116.0,
+          "orders": 2
+        }
+      },
+      "cancellations": 2,
+      "gross_eur": 406.0,
+      "orders": 3,
+      "record_count": 5
     }
   },
-  "updated": "2026-04-29T06:29:53Z"
+  "updated": "2026-04-30T06:33:27Z"
 }
