@@ -488,7 +488,24 @@
       "gross_eur": 0.0,
       "orders": 0,
       "record_count": 0
+    },
+    "2026-05-02": {
+      "by_country": {},
+      "by_product": {
+        "Arkkitehtuuri- ja designmuseo Katja St\u00e5hlin kanssa": {
+          "eur": 29.0,
+          "orders": 1
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 174.0,
+      "orders": 2,
+      "record_count": 2
     }
   },
-  "updated": "2026-05-02T06:15:05Z"
+  "updated": "2026-05-03T06:32:57Z"
 }
