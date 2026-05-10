@@ -615,7 +615,20 @@
       "gross_eur": 229.0,
       "orders": 2,
       "record_count": 2
+    },
+    "2026-05-09": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 145.0,
+      "orders": 1,
+      "record_count": 1
     }
   },
-  "updated": "2026-05-09T06:22:31Z"
+  "updated": "2026-05-10T06:38:54Z"
 }
