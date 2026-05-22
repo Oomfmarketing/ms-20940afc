@@ -24,6 +24,113 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 PROBE_FILE = REPO_ROOT / "data" / "bokun-museokauppa.json"
 HTML_FILE = REPO_ROOT / "docs" / "summary.html"
 
+# Channel scope: only "ELAMYSSUOMI activity shop" — same as the daily dashboard.
+# The probe pulls everything visible to the API key (Sweden Arena, Book Turku,
+# DCS Plus, …); the daily Museokauppa scope is just channel 212670.
+MUSEOKAUPPA_CHANNEL_ID = 212670
+
+
+def filter_bookings(bookings: list[dict]) -> list[dict]:
+    return [b for b in bookings if b.get("channel_id") == MUSEOKAUPPA_CHANNEL_ID]
+
+
+def reaggregate(bookings: list[dict]) -> dict:
+    """Recompute the same aggregate shape as probe_history.aggregate, but from
+    a filtered subset of bookings_slim."""
+    from collections import defaultdict
+    from statistics import median
+    from datetime import date as _date
+
+    counted = [b for b in bookings if b.get("status") in ("CONFIRMED", "ARRIVED")]
+    by_day = defaultdict(lambda: {"orders_confirmed": 0, "gross_confirmed": 0.0,
+                                  "orders_cancelled": 0, "gross_cancelled": 0.0,
+                                  "pax_confirmed": 0})
+    by_month = defaultdict(lambda: {"orders_confirmed": 0, "gross_confirmed": 0.0,
+                                    "orders_cancelled": 0, "gross_cancelled": 0.0,
+                                    "pax_confirmed": 0})
+    by_product = defaultdict(lambda: {"orders_confirmed": 0, "gross_confirmed": 0.0,
+                                      "orders_cancelled": 0, "gross_cancelled": 0.0,
+                                      "pax_confirmed": 0, "title": ""})
+    by_vendor = defaultdict(lambda: {"orders_confirmed": 0, "gross_confirmed": 0.0,
+                                     "orders_cancelled": 0, "gross_cancelled": 0.0,
+                                     "pax_confirmed": 0, "title": ""})
+    by_country = defaultdict(lambda: {"orders_confirmed": 0, "gross_confirmed": 0.0,
+                                      "orders_cancelled": 0, "gross_cancelled": 0.0,
+                                      "pax_confirmed": 0})
+    lead_days: list[int] = []
+
+    for b in bookings:
+        status = b.get("status")
+        bucket = "confirmed" if status in ("CONFIRMED", "ARRIVED") else "cancelled"
+        cd = b.get("creationDate") or ""
+        ym = cd[:7] if cd else ""
+        gross = float(b.get("totalPriceAmount") or 0)
+        pax = int(b.get("totalParticipants") or 0)
+
+        if cd:
+            by_day[cd][f"orders_{bucket}"] += 1
+            by_day[cd][f"gross_{bucket}"] += gross
+            if bucket == "confirmed":
+                by_day[cd]["pax_confirmed"] += pax
+        if ym:
+            by_month[ym][f"orders_{bucket}"] += 1
+            by_month[ym][f"gross_{bucket}"] += gross
+            if bucket == "confirmed":
+                by_month[ym]["pax_confirmed"] += pax
+
+        pid = str(b.get("product_id") or "?")
+        by_product[pid][f"orders_{bucket}"] += 1
+        by_product[pid][f"gross_{bucket}"] += gross
+        if bucket == "confirmed":
+            by_product[pid]["pax_confirmed"] += pax
+        if b.get("product_title"):
+            by_product[pid]["title"] = b["product_title"]
+
+        vid = str(b.get("vendor_id") or "?")
+        by_vendor[vid][f"orders_{bucket}"] += 1
+        by_vendor[vid][f"gross_{bucket}"] += gross
+        if bucket == "confirmed":
+            by_vendor[vid]["pax_confirmed"] += pax
+        if b.get("vendor_title"):
+            by_vendor[vid]["title"] = b["vendor_title"]
+
+        c = b.get("country") or "UNKNOWN"
+        by_country[c][f"orders_{bucket}"] += 1
+        by_country[c][f"gross_{bucket}"] += gross
+        if bucket == "confirmed":
+            by_country[c]["pax_confirmed"] += pax
+
+        if bucket == "confirmed" and b.get("creationDate") and b.get("startDate"):
+            try:
+                d1 = _date.fromisoformat(b["creationDate"])
+                d2 = _date.fromisoformat(b["startDate"])
+                ld = (d2 - d1).days
+                if ld >= 0:
+                    lead_days.append(ld)
+            except Exception:
+                pass
+
+    def pctile(xs, p):
+        if not xs:
+            return 0
+        xs = sorted(xs)
+        return xs[int((len(xs) - 1) * p)]
+
+    return {
+        "by_day": dict(by_day),
+        "by_month": dict(by_month),
+        "by_product": dict(by_product),
+        "by_vendor": dict(by_vendor),
+        "by_country": dict(by_country),
+        "lead_time_stats": {
+            "count": len(lead_days),
+            "median_days": int(median(lead_days)) if lead_days else 0,
+            "p25_days": pctile(lead_days, 0.25),
+            "p75_days": pctile(lead_days, 0.75),
+            "mean_days": round(sum(lead_days) / len(lead_days), 1) if lead_days else 0,
+        },
+    }
+
 
 def build_dashboard_data(probe: dict) -> dict:
     agg = probe["aggregates"]
@@ -215,7 +322,25 @@ def main() -> None:
 
     probe = json.loads(PROBE_FILE.read_text())
     template = HTML_FILE.read_text()
-    data = build_dashboard_data(probe)
+
+    # Filter probe to Museokauppa channel only
+    full_bookings = probe["bookings_slim"]
+    museo_bookings = filter_bookings(full_bookings)
+    print(f"Filtered: {len(museo_bookings)}/{len(full_bookings)} bookings in channel "
+          f"{MUSEOKAUPPA_CHANNEL_ID} (ELAMYSSUOMI activity shop)")
+
+    # Re-aggregate from the filtered subset and rebuild a probe-shaped dict
+    from collections import Counter
+    filtered_probe = {
+        "fetched_at": probe["fetched_at"],
+        "history_window": probe["history_window"],
+        "channel_label": "Museokauppa (ELAMYSSUOMI activity shop)",
+        "status_distribution": dict(Counter(b.get("status") for b in museo_bookings)),
+        "aggregates": reaggregate(museo_bookings),
+        "bookings_slim": museo_bookings,
+    }
+
+    data = build_dashboard_data(filtered_probe)
 
     out = inline_into_html(template, data)
     HTML_FILE.write_text(out)
