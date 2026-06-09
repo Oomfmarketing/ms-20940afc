@@ -1078,7 +1078,24 @@
       "gross_eur": 515.0,
       "orders": 4,
       "record_count": 4
+    },
+    "2026-06-08": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 396.0,
+          "orders": 3
+        },
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 541.0,
+      "orders": 4,
+      "record_count": 4
     }
   },
-  "updated": "2026-06-08T08:59:18Z"
+  "updated": "2026-06-09T07:56:36Z"
 }
