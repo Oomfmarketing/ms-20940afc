@@ -1309,7 +1309,36 @@
       "gross_eur": 832.0,
       "orders": 5,
       "record_count": 5
+    },
+    "2026-06-22": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 396.0,
+          "orders": 4
+        },
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 1199.0,
+          "orders": 8
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 580.0,
+          "orders": 4
+        },
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 720.0,
+          "orders": 5
+        },
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 435.0,
+          "orders": 2
+        }
+      },
+      "cancellations": 1,
+      "gross_eur": 3330.0,
+      "orders": 23,
+      "record_count": 24
     }
   },
-  "updated": "2026-06-22T09:51:44Z"
+  "updated": "2026-06-23T07:54:27Z"
 }
