@@ -1462,7 +1462,36 @@
       "gross_eur": 2084.0,
       "orders": 12,
       "record_count": 12
+    },
+    "2026-06-27": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 5886.0,
+          "orders": 44
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 4930.0,
+          "orders": 24
+        },
+        "Day Trip from Tampere to Mikkeli: Muisti & Headquarters Museum Experience": {
+          "eur": 720.0,
+          "orders": 5
+        },
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 3360.0,
+          "orders": 22
+        },
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 3045.0,
+          "orders": 15
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 17941.0,
+      "orders": 110,
+      "record_count": 110
     }
   },
-  "updated": "2026-06-27T07:22:00Z"
+  "updated": "2026-06-28T07:54:27Z"
 }
