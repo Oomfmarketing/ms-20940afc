@@ -1549,7 +1549,28 @@
       "gross_eur": 4601.0,
       "orders": 30,
       "record_count": 31
+    },
+    "2026-06-30": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 435.0,
+          "orders": 2
+        },
+        "Day Trip from Tampere to Mikkeli: Muisti & Headquarters Museum Experience": {
+          "eur": 1200.0,
+          "orders": 6
+        },
+        "Day Trip from Turku: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 1780.0,
+      "orders": 9,
+      "record_count": 9
     }
   },
-  "updated": "2026-06-30T07:57:49Z"
+  "updated": "2026-07-01T08:17:47Z"
 }
