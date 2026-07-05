@@ -1629,7 +1629,20 @@
       "gross_eur": 633.0,
       "orders": 4,
       "record_count": 4
+    },
+    "2026-07-04": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Kotka\u2019s Maritime Centre & Str\u00f6mfors Ironworks": {
+          "eur": 109.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 109.0,
+      "orders": 1,
+      "record_count": 1
     }
   },
-  "updated": "2026-07-04T06:53:00Z"
+  "updated": "2026-07-05T07:33:12Z"
 }
