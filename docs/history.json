@@ -1512,13 +1512,13 @@
           "orders": 10
         },
         "Day Trip from Turku: Serlachius Manor & Headquarters": {
-          "eur": 2755.0,
-          "orders": 14
+          "eur": 2610.0,
+          "orders": 13
         }
       },
-      "cancellations": 0,
-      "gross_eur": 5112.0,
-      "orders": 28,
+      "cancellations": 1,
+      "gross_eur": 4967.0,
+      "orders": 27,
       "record_count": 28
     },
     "2026-06-29": {
@@ -1642,7 +1642,24 @@
       "gross_eur": 109.0,
       "orders": 1,
       "record_count": 1
+    },
+    "2026-07-05": {
+      "by_country": {},
+      "by_product": {
+        "Day trip from Helsinki to Mikkeli : Muisti Museum, Guided Tour & Kenk\u00e4vero": {
+          "eur": 110.0,
+          "orders": 1
+        },
+        "Summer Art Journey from Tampere to Helsinki": {
+          "eur": 109.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 219.0,
+      "orders": 2,
+      "record_count": 2
     }
   },
-  "updated": "2026-07-05T07:33:12Z"
+  "updated": "2026-07-06T08:27:11Z"
 }
