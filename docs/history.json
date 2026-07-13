@@ -1765,7 +1765,20 @@
       "gross_eur": 290.0,
       "orders": 1,
       "record_count": 1
+    },
+    "2026-07-12": {
+      "by_country": {},
+      "by_product": {
+        "Day trip from Helsinki to Mikkeli : Muisti Museum, Guided Tour & Kenk\u00e4vero": {
+          "eur": 220.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 220.0,
+      "orders": 1,
+      "record_count": 1
     }
   },
-  "updated": "2026-07-12T06:41:59Z"
+  "updated": "2026-07-13T07:29:02Z"
 }
