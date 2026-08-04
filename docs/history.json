@@ -2065,7 +2065,20 @@
       "gross_eur": 89.0,
       "orders": 1,
       "record_count": 1
+    },
+    "2026-08-03": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 99.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 99.0,
+      "orders": 1,
+      "record_count": 1
     }
   },
-  "updated": "2026-08-03T07:35:20Z"
+  "updated": "2026-08-04T06:33:41Z"
 }
