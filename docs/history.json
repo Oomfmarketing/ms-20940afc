@@ -2147,7 +2147,15 @@
       "gross_eur": 99.0,
       "orders": 1,
       "record_count": 1
+    },
+    "2026-08-09": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
     }
   },
-  "updated": "2026-08-09T05:11:24Z"
+  "updated": "2026-08-10T05:38:05Z"
 }
