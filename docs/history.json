@@ -2163,7 +2163,15 @@
       "gross_eur": 0.0,
       "orders": 0,
       "record_count": 0
+    },
+    "2026-08-11": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
     }
   },
-  "updated": "2026-08-11T05:14:31Z"
+  "updated": "2026-08-12T05:41:42Z"
 }
