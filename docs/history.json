@@ -2213,7 +2213,20 @@
       "gross_eur": 693.0,
       "orders": 4,
       "record_count": 4
+    },
+    "2026-08-16": {
+      "by_country": {},
+      "by_product": {
+        "Summer Art Journey from Tampere to Helsinki": {
+          "eur": 109.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 109.0,
+      "orders": 1,
+      "record_count": 1
     }
   },
-  "updated": "2026-08-16T04:41:37Z"
+  "updated": "2026-08-17T04:50:52Z"
 }
