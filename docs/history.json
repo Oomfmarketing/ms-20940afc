@@ -2319,7 +2319,15 @@
       "gross_eur": 0.0,
       "orders": 0,
       "record_count": 0
+    },
+    "2026-08-28": {
+      "by_country": {},
+      "by_product": {},
+      "cancellations": 0,
+      "gross_eur": 0.0,
+      "orders": 0,
+      "record_count": 0
     }
   },
-  "updated": "2026-08-28T16:29:58Z"
+  "updated": "2026-08-29T10:58:07Z"
 }
