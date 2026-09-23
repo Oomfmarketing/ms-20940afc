@@ -2580,7 +2580,24 @@
       "gross_eur": 290.0,
       "orders": 1,
       "record_count": 1
+    },
+    "2026-09-22": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 145.0,
+          "orders": 1
+        },
+        "Day Trip from Tampere: Serlachius Manor & Headquarters": {
+          "eur": 105.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 250.0,
+      "orders": 2,
+      "record_count": 2
     }
   },
-  "updated": "2026-09-22T09:12:54Z"
+  "updated": "2026-09-23T09:13:20Z"
 }
