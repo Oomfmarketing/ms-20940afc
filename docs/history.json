@@ -2541,15 +2541,10 @@
     },
     "2026-09-18": {
       "by_country": {},
-      "by_product": {
-        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
-          "eur": 145.0,
-          "orders": 1
-        }
-      },
-      "cancellations": 0,
-      "gross_eur": 145.0,
-      "orders": 1,
+      "by_product": {},
+      "cancellations": 1,
+      "gross_eur": 0.0,
+      "orders": 0,
       "record_count": 1
     },
     "2026-09-19": {
@@ -2639,7 +2634,24 @@
       "gross_eur": 0.0,
       "orders": 0,
       "record_count": 0
+    },
+    "2026-09-27": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Helsinki: Chappe, Raseborg Museum & Fiskars Village": {
+          "eur": 198.0,
+          "orders": 2
+        },
+        "Day Trip from Helsinki: Serlachius Manor & Headquarters": {
+          "eur": 290.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 488.0,
+      "orders": 3,
+      "record_count": 3
     }
   },
-  "updated": "2026-09-27T09:56:03Z"
+  "updated": "2026-09-28T10:46:04Z"
 }
