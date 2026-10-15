@@ -2821,7 +2821,20 @@
       "gross_eur": 540.0,
       "orders": 3,
       "record_count": 3
+    },
+    "2026-10-14": {
+      "by_country": {},
+      "by_product": {
+        "Day Trip from Tampere: Chappe, Raseborg Museum & Glass Museum": {
+          "eur": 240.0,
+          "orders": 1
+        }
+      },
+      "cancellations": 0,
+      "gross_eur": 240.0,
+      "orders": 1,
+      "record_count": 1
     }
   },
-  "updated": "2026-10-14T09:24:35Z"
+  "updated": "2026-10-15T09:02:49Z"
 }
