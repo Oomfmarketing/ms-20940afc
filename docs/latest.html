@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="referrer" content="no-referrer">
-<title>Museokauppa Dashboard — Weekend 2026-11-20 → 2026-11-22</title>
+<title>Museokauppa Dashboard — Mon 2026-11-23</title>
 <style>
 :root {
   --bg: #0f172a; --panel: #1e293b; --ink: #f1f5f9; --muted: #94a3b8;
@@ -65,119 +65,17 @@ footer { margin-top:24px; font-size:11px; color:var(--muted); text-align:center;
     <header>
       <div>
         <h1>Museokauppa Dashboard</h1>
-        <div class="subtitle">Museokortti channel · sales day <strong>Weekend 2026-11-20 → 2026-11-22</strong></div>
+        <div class="subtitle">Museokortti channel · sales day <strong>Mon 2026-11-23</strong></div>
       </div>
-      <div class="meta">
-        Generated <strong>2026-11-23 14:18 UTC</strong><br>
-        Schedule: daily 07:00 Europe/Helsinki<br>
-        Owner: Lassi Nummi (CEO, B&amp;E)
-      </div>
+      <div class="meta">Generated <strong>2026-11-24 14:42 UTC</strong></div>
     </header>
-
     <div class="nav"><a class="active" href="latest.html">Today</a> · <a class="" href="trends.html">Trends</a> · <a class="" href="index.html">Archive</a></div>
-
     <section class="card">
-      <h2>Bokún · activity shop · Weekend 2026-11-20 → 2026-11-22</h2>
-      <div class="grid-kpi" style="margin-bottom:0;">
-        <div class="kpi"><div class="label">Orders</div>
-          <div class="value">24</div>
-          <div class="delta">unique parent bookings</div></div>
-        <div class="kpi"><div class="label">Gross sales (BM), EUR</div>
-          <div class="value">2 770 €</div>
-          <div class="delta">bruttomyynti, not FAS LV</div></div>
-        <div class="kpi"><div class="label">AOV, EUR</div>
-          <div class="value">115 €</div>
-          <div class="delta">gross ÷ orders</div></div>
-        <div class="kpi"><div class="label">WoW Δ</div>
-          <div class="value">2 671 €</div>
-          <div class="delta up">▲ +2698.0% vs same day last week (99 €)</div></div>
-      </div>
+      <h2>Run status</h2>
+      <div style="color:#fde68a;"><span class="pill bad">Blocked</span> Bokún fetch failed this run.</div>
+      <pre style="background:#0b1120;padding:12px;border-radius:6px;color:#fca5a5;font-size:12px;overflow:auto;">HTTP 400: {&quot;message&quot;:&quot;No permission to access web services.&quot;,&quot;fields&quot;:{}}</pre>
     </section>
-
-    
-    <section class="card">
-      <h2>Trip · B&amp;E packages · Weekend 2026-11-20 → 2026-11-22</h2>
-      <div class="grid-kpi" style="margin-bottom:0;">
-        <div class="kpi"><div class="label">Confirmed orders</div>
-          <div class="value">0</div>
-          <div class="delta">Status=1</div></div>
-        <div class="kpi"><div class="label">Confirmed gross (BM)</div>
-          <div class="value">0 €</div>
-          <div class="delta">bruttomyynti, not FAS LV</div></div>
-        <div class="kpi"><div class="label">AOV</div>
-          <div class="value">0 €</div>
-          <div class="delta">gross ÷ confirmed</div></div>
-        <div class="kpi"><div class="label">WoW Δ</div>
-          <div class="value">—</div>
-          <div class="delta">no comparison</div></div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Bokún · top 10 products</h2>
-      <table>
-        <thead><tr><th>#</th><th>Product</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
-        <tbody><tr><td>1</td><td>Day Trip from Helsinki: Kotka’s Maritime Centre &amp; Strömfors Ironworks</td><td class='num'>5</td><td class='num'>712 €</td></tr>
-<tr><td>2</td><td>Day Trip from Helsinki: Serlachius Manor &amp; Headquarters</td><td class='num'>4</td><td class='num'>595 €</td></tr>
-<tr><td>3</td><td>Day Trip from Helsinki: Chappe, Raseborg Museum &amp; Fiskars Village</td><td class='num'>6</td><td class='num'>553 €</td></tr>
-<tr><td>4</td><td>Day Trip from Tampere: Chappe, Raseborg Museum &amp; Glass Museum</td><td class='num'>6</td><td class='num'>534 €</td></tr>
-<tr><td>5</td><td>Day Trip from Turku: Serlachius Manor &amp; Headquarters</td><td class='num'>2</td><td class='num'>198 €</td></tr>
-<tr><td>6</td><td>Day Trip from Helsinki: Stories of Porvoo Old Town</td><td class='num'>1</td><td class='num'>178 €</td></tr></tbody>
-      </table>
-    </section>
-
-    
-    <section class="card">
-      <h2>Trip · top packages · Weekend 2026-11-20 → 2026-11-22</h2>
-      <table>
-        <thead><tr><th>#</th><th>Package</th><th class="num">Orders</th><th class="num">Gross (EUR)</th></tr></thead>
-        <tbody><tr><td colspan='4' style='color:var(--muted);padding:14px 10px;'>No Trip packages confirmed for this window.</td></tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="card">
-      <h2>Bokún · geography split</h2>
-      <div style='color:var(--muted);font-size:13px;'>Traveler-country breakdown unavailable for this day.</div>
-    </section>
-
-    <section class="card">
-      <h2>Data sources</h2>
-      
-      <div class="status-row">
-        <div><span class="pill ok">OK</span></div>
-        <div>
-          <div style="font-weight:600;">Bokún REST API</div>
-          <div class="src-detail">
-            Endpoint: <code>POST /booking.json/product-booking-search</code><br>
-            Scope: server-side key (channel "ELAMYSSUOMI activity shop" id 212670)<br>
-            Window: creationDateRange = Weekend 2026-11-20 → 2026-11-22
-          </div>
-        </div>
-        <div class="num"><code>24 lines</code></div>
-      </div>
-      <div class="status-row">
-        <div><span class="pill ok">OK</span></div>
-        <div>
-          <div style="font-weight:600;">Trip (elamys-trip2) aggregates</div>
-          <div class="src-detail">
-            Source: PII-free aggregates at <code>data/trip-aggregates.json</code><br>
-            Produced locally by <code>scripts/trip_aggregate.py</code> from the
-            admin-UI "Dashboard-packages" CSV export<br>
-            Last refreshed: <code>2026-04-22T09:00:34Z</code> ·
-            days in window with data: 0
-          </div>
-        </div>
-        <div class="num"><code>615 src rows</code></div>
-      </div>
-    
-    </section>
-
-    <footer>
-      Museokauppa Dashboard · Elämys Group B&amp;E · automated run ·
-      "Gross sales (BM)" = bruttomyynti (not FAS liikevaihto) ·
-      cancellations excluded from totals (0 cancelled lines observed).
-    </footer>
+    <footer>Museokauppa Dashboard · Elämys Group B&amp;E · automated run</footer>
   </div>
 </body>
 </html>
